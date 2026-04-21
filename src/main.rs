@@ -10,16 +10,16 @@ fn App() -> impl IntoView {
         <style>
             {r#"
             :root {
-                --bg: #f3f5f2;
+                --bg: #fbfef9;
                 --paper: #ffffff;
-                --ink: #151719;
-                --ink-2: #202529;
-                --muted: #5f666d;
-                --line: #d8ddd6;
-                --accent: #15616d;
-                --accent-dark: #0d3f47;
-                --accent-soft: #dfecea;
-                --warm: #c46d3b;
+                --ink: #181818;
+                --ink-2: #a63446;
+                --muted: #666a63;
+                --line: #e0e4dc;
+                --accent: #a63446;
+                --accent-dark: #842838;
+                --accent-soft: #f5e5e8;
+                --warm: #a63446;
                 font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
             }
 
@@ -35,10 +35,10 @@ fn App() -> impl IntoView {
                 margin: 0;
                 color: var(--ink);
                 background:
-                    linear-gradient(rgba(21, 97, 109, 0.045) 1px, transparent 1px),
-                    linear-gradient(90deg, rgba(21, 97, 109, 0.045) 1px, transparent 1px),
+                    linear-gradient(rgba(166, 52, 70, 0.035) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(166, 52, 70, 0.035) 1px, transparent 1px),
                     var(--bg);
-                background-size: 48px 48px;
+                background-size: 56px 56px;
                 font-size: 16px;
                 line-height: 1.6;
             }
@@ -49,12 +49,12 @@ fn App() -> impl IntoView {
             }
 
             .container {
-                width: min(960px, calc(100% - 32px));
+                width: min(900px, calc(100% - 32px));
                 margin: 0 auto;
             }
 
             .nav {
-                background: rgba(244, 245, 241, 0.92);
+                background: rgba(251, 254, 249, 0.94);
                 border-bottom: 1px solid var(--line);
                 position: sticky;
                 top: 0;
@@ -78,15 +78,9 @@ fn App() -> impl IntoView {
             }
 
             .mark {
-                width: 28px;
-                height: 28px;
-                border: 2px solid var(--accent);
-                display: grid;
-                place-items: center;
-                color: var(--accent);
-                font-size: 0.85rem;
-                line-height: 1;
-                transform: rotate(-3deg);
+                width: 32px;
+                height: 32px;
+                display: block;
             }
 
             .nav-links {
@@ -128,33 +122,20 @@ fn App() -> impl IntoView {
             }
 
             .section {
-                padding: 58px 0;
+                padding: 52px 0;
                 border-bottom: 1px solid var(--line);
             }
 
             .hero {
                 padding: 0;
                 background:
-                    linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
-                    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px),
+                    linear-gradient(rgba(251,254,249,0.11) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(251,254,249,0.11) 1px, transparent 1px),
                     var(--ink-2);
-                background-size: 42px 42px;
-                color: #f7f8f3;
+                background-size: 56px 56px, 56px 56px, auto;
+                color: #fbfef9;
                 overflow: hidden;
                 position: relative;
-            }
-
-            .hero::after {
-                content: "2026";
-                position: absolute;
-                right: max(18px, calc((100vw - 960px) / 2));
-                top: 28px;
-                color: rgba(255,255,255,0.055);
-                font-size: clamp(5rem, 18vw, 14rem);
-                font-weight: 800;
-                line-height: 1;
-                letter-spacing: -0.08em;
-                pointer-events: none;
             }
 
             .hero-layout {
@@ -162,23 +143,14 @@ fn App() -> impl IntoView {
                 grid-template-columns: minmax(0, 1.4fr) minmax(260px, 0.6fr);
                 gap: 36px;
                 align-items: end;
-                min-height: 520px;
-                padding: 88px 0;
+                min-height: 430px;
+                padding: 68px 0;
                 position: relative;
                 z-index: 1;
             }
 
             h2 {
                 font-size: 1.7rem;
-                margin-bottom: 10px;
-            }
-
-            .section-label {
-                color: var(--warm);
-                font-size: 0.78rem;
-                font-weight: 800;
-                letter-spacing: 0.12em;
-                text-transform: uppercase;
                 margin-bottom: 10px;
             }
 
@@ -199,7 +171,7 @@ fn App() -> impl IntoView {
             }
 
             .eyebrow {
-                color: #8ed1c7;
+                color: #fbfef9;
                 font-size: 0.78rem;
                 font-weight: 700;
                 letter-spacing: 0.12em;
@@ -210,30 +182,14 @@ fn App() -> impl IntoView {
             .lead {
                 max-width: 680px;
                 font-size: 1.15rem;
-                color: #d8dedb;
-            }
-
-            .hero-tags {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 10px;
-                margin-top: 28px;
-            }
-
-            .tag {
-                border: 1px solid rgba(255,255,255,0.22);
-                color: #e8efed;
-                padding: 7px 10px;
-                font-size: 0.88rem;
+                color: #f8ecef;
             }
 
             .hero-rail {
-                border-left: 2px solid var(--warm);
-                color: #cfd8d5;
+                color: #f4e4e7;
                 display: grid;
                 gap: 4px;
-                margin-top: 30px;
-                padding-left: 14px;
+                margin-top: 26px;
                 max-width: 420px;
             }
 
@@ -244,19 +200,13 @@ fn App() -> impl IntoView {
             .panel {
                 background: var(--paper);
                 border: 1px solid var(--line);
-                box-shadow: 10px 10px 0 rgba(21, 97, 109, 0.10);
+                border-top: 4px solid var(--accent);
                 padding: 26px;
                 position: relative;
             }
 
             .panel::before {
-                content: "";
-                position: absolute;
-                inset: 10px 10px auto auto;
-                width: 44px;
-                height: 44px;
-                border-top: 2px solid var(--accent);
-                border-right: 2px solid var(--accent);
+                display: none;
             }
 
             .panel-title {
@@ -269,33 +219,10 @@ fn App() -> impl IntoView {
                 display: inline-block;
                 margin-top: 14px;
                 padding: 6px 10px;
-                border: 1px solid #b8c8c5;
+                border: 1px solid #e0bac1;
                 color: var(--accent-dark);
                 background: var(--accent-soft);
                 font-size: 0.9rem;
-                font-weight: 700;
-            }
-
-            .spec-list {
-                display: grid;
-                gap: 10px;
-                margin-top: 18px;
-                padding-top: 18px;
-                border-top: 1px solid var(--line);
-            }
-
-            .spec-row {
-                display: flex;
-                justify-content: space-between;
-                gap: 18px;
-                color: var(--muted);
-                font-size: 0.95rem;
-                border-bottom: 1px solid #eef0eb;
-                padding-bottom: 8px;
-            }
-
-            .spec-row strong {
-                color: var(--ink);
                 font-weight: 700;
             }
 
@@ -306,7 +233,7 @@ fn App() -> impl IntoView {
             }
 
             .info-block {
-                background: rgba(255,255,255,0.64);
+                background: rgba(255,255,255,0.84);
                 border: 1px solid var(--line);
                 padding: 24px;
                 box-shadow: 0 1px 0 rgba(21, 23, 25, 0.04);
@@ -318,7 +245,6 @@ fn App() -> impl IntoView {
                 border-left: 4px solid var(--accent);
                 padding: 28px;
                 max-width: 760px;
-                box-shadow: 8px 8px 0 rgba(196, 109, 59, 0.10);
             }
 
             .project h3 {
@@ -336,61 +262,22 @@ fn App() -> impl IntoView {
                 margin-bottom: 10px;
             }
 
-            .project-grid {
+            .project-facts {
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
-                gap: 14px;
-                margin-top: 22px;
-            }
-
-            .project-detail {
-                border: 1px solid var(--line);
-                background: rgba(255,255,255,0.72);
-                padding: 18px;
-            }
-
-            .project-detail strong {
-                display: block;
-                color: var(--ink);
-                margin-bottom: 6px;
-            }
-
-            .timeline {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 0;
+                gap: 12px;
                 margin-top: 18px;
-                max-width: 760px;
+            }
+
+            .project-fact {
                 border: 1px solid var(--line);
                 background: var(--paper);
+                padding: 14px;
+                color: var(--muted);
             }
 
-            .timeline-step {
-                padding: 16px;
-                border-right: 1px solid var(--line);
-            }
-
-            .timeline-step:last-child {
-                border-right: 0;
-            }
-
-            .timeline-step span {
-                color: var(--warm);
-                display: block;
-                font-size: 0.78rem;
-                font-weight: 800;
-                letter-spacing: 0.12em;
-                margin-bottom: 6px;
-                text-transform: uppercase;
-            }
-
-            .timeline-step strong {
+            .project-fact strong {
                 color: var(--ink);
-                display: block;
-            }
-
-            .timeline-step.active {
-                background: var(--accent-soft);
             }
 
             .member-grid {
@@ -402,7 +289,7 @@ fn App() -> impl IntoView {
             }
 
             .member {
-                background: rgba(255,255,255,0.64);
+                background: rgba(255,255,255,0.84);
                 border: 1px solid var(--line);
                 padding: 12px 14px;
                 color: var(--ink);
@@ -410,7 +297,7 @@ fn App() -> impl IntoView {
             }
 
             .member:hover {
-                border-color: #b8c8c5;
+                border-color: var(--accent);
                 transform: translateY(-1px);
             }
 
@@ -450,7 +337,7 @@ fn App() -> impl IntoView {
 
             footer {
                 background: var(--ink-2);
-                color: #cfd8d5;
+                color: #f4e4e7;
                 padding: 30px 0;
             }
 
@@ -465,9 +352,8 @@ fn App() -> impl IntoView {
                 .nav-inner,
                 .hero-layout,
                 .split,
-                .project-grid,
                 .member-grid,
-                .timeline {
+                .project-facts {
                     grid-template-columns: 1fr;
                 }
 
@@ -486,14 +372,6 @@ fn App() -> impl IntoView {
                     padding: 58px 0;
                 }
 
-                .timeline-step {
-                    border-right: 0;
-                    border-bottom: 1px solid var(--line);
-                }
-
-                .timeline-step:last-child {
-                    border-bottom: 0;
-                }
             }
             "#}
         </style>
@@ -501,13 +379,12 @@ fn App() -> impl IntoView {
         <nav class="nav">
             <div class="container nav-inner">
                 <a class="brand" href="#home">
-                    <span class="mark">"L"</span>
+                    <img class="mark" src="logo.svg" alt="The Lab logo" />
                     <span>"The Lab"</span>
                 </a>
                 <div class="nav-links">
                     <a href="#home">"Home"</a>
                     <a href="#members">"Members"</a>
-                    <a href="#projects">"Upcoming Projects"</a>
                     <a href="#electric-car">"Electric Car"</a>
                     <a href="#support">"Support"</a>
                     <a href="#contact">"Contact"</a>
@@ -524,31 +401,15 @@ fn App() -> impl IntoView {
                         <p class="lead">
                             "The Lab is an engineering organization focused on building real projects and solving technical problems."
                         </p>
-                        <div class="hero-tags">
-                            <span class="tag">"Design"</span>
-                            <span class="tag">"Prototype"</span>
-                            <span class="tag">"Test"</span>
-                            <span class="tag">"Build"</span>
-                        </div>
                         <div class="hero-rail">
                             <span><strong>"Main Project:"</strong> " Electric Car 2026"</span>
-                            <span><strong>"Open To:"</strong> " Builders, designers, and problem solvers"</span>
+                            <span><strong>"Location:"</strong> " Boise, Idaho"</span>
                         </div>
                     </div>
                     <div class="panel">
                         <div class="panel-title">"Electric Car 2026"</div>
                         <p>"The main project focus for The Lab."</p>
                         <span class="status">"In progress"</span>
-                        <div class="spec-list">
-                            <div class="spec-row">
-                                <span>"Project"</span>
-                                <strong>"Electric Car 2026"</strong>
-                            </div>
-                            <div class="spec-row">
-                                <span>"Phase"</span>
-                                <strong>"Planning"</strong>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </section>
@@ -556,14 +417,12 @@ fn App() -> impl IntoView {
             <section id="about" class="section">
                 <div class="container split">
                     <div class="info-block">
-                        <div class="section-label">"01 / About"</div>
                         <h2>"About"</h2>
                         <p>
-                            "The Lab brings engineering work into one organized place. The focus is practical design, prototyping, testing, and turning ideas into working systems."
+                            "Based in Boise, Idaho, The Lab brings engineering work into one organized place. The focus is practical design, prototyping, testing, and turning ideas into working systems."
                         </p>
                     </div>
                     <div class="info-block">
-                        <div class="section-label">"02 / Work"</div>
                         <h2>"What We Work On"</h2>
                         <ul>
                             <li>"Mechanical design"</li>
@@ -578,7 +437,6 @@ fn App() -> impl IntoView {
             <section id="members" class="section">
                 <div class="container">
                     <div class="section-heading">
-                        <div class="section-label">"03 / Members"</div>
                         <h2>"Members"</h2>
                         <p>
                             "The Lab is open to new members. Anyone interested in engineering, building, design, or technical projects is welcome."
@@ -609,56 +467,25 @@ fn App() -> impl IntoView {
                 </div>
             </section>
 
-            <section id="projects" class="section">
-                <div class="container">
-                    <div class="section-heading">
-                        <div class="section-label">"04 / Project"</div>
-                        <h2>"Upcoming Projects"</h2>
-                        <p>"The Lab is currently centered on one main project."</p>
-                    </div>
-                    <div class="project">
-                        <div class="project-meta">"2026 Focus Project"</div>
-                        <h3>"Electric Car 2026"</h3>
-                        <p>"The Lab's focus project for 2026 is an electric car. Planning is underway, with more details coming as the project develops."</p>
-                    </div>
-                </div>
-            </section>
-
             <section id="electric-car" class="section">
                 <div class="container">
-                    <div class="section-heading">
-                        <div class="section-label">"05 / Focus"</div>
+                    <div class="project">
+                        <div class="project-meta">"Upcoming Project"</div>
                         <h2>"Electric Car 2026"</h2>
-                        <p>
-                            "Electric Car 2026 is the main engineering project for The Lab."
-                        </p>
+                        <p>"The Lab is currently centered on Electric Car 2026. Planning is underway, and progress will be added here as the project develops."</p>
                     </div>
-                    <div class="timeline">
-                        <div class="timeline-step">
-                            <span>"Step 01"</span>
-                            <strong>"Concept"</strong>
+                    <div class="project-facts">
+                        <div class="project-fact">
+                            <strong>"Status:"</strong>
+                            " Planning"
                         </div>
-                        <div class="timeline-step active">
-                            <span>"Step 02"</span>
-                            <strong>"Planning"</strong>
+                        <div class="project-fact">
+                            <strong>"Year:"</strong>
+                            " 2026"
                         </div>
-                        <div class="timeline-step">
-                            <span>"Step 03"</span>
-                            <strong>"Build"</strong>
-                        </div>
-                    </div>
-                    <div class="project-grid">
-                        <div class="project-detail">
-                            <strong>"Goal"</strong>
-                            <p>"Develop a small electric vehicle project from planning through testing."</p>
-                        </div>
-                        <div class="project-detail">
-                            <strong>"Status"</strong>
-                            <p>"Planning and early project setup."</p>
-                        </div>
-                        <div class="project-detail">
-                            <strong>"Updates"</strong>
-                            <p>"Progress will be added here as the project develops."</p>
+                        <div class="project-fact">
+                            <strong>"Location:"</strong>
+                            " Boise, Idaho"
                         </div>
                     </div>
                 </div>
@@ -667,7 +494,6 @@ fn App() -> impl IntoView {
             <section id="support" class="section">
                 <div class="container">
                     <div class="support-box">
-                        <div class="section-label">"06 / Support"</div>
                         <h2>"Sponsors and Donations"</h2>
                         <p>
                             "The Lab is open to sponsors, donations, materials, tools, advice, and other support for engineering projects."
@@ -683,7 +509,6 @@ fn App() -> impl IntoView {
 
             <section id="contact" class="section">
                 <div class="container">
-                    <div class="section-label">"07 / Contact"</div>
                     <h2>"Contact"</h2>
                     <div class="contact-box">
                         <p>"For questions, membership, sponsorships, donations, or anything else, email:"</p>
@@ -700,6 +525,7 @@ fn App() -> impl IntoView {
         <footer>
             <div class="container">
                 <span>"The Lab · Engineering organization"</span>
+                <span>"Based in Boise, Idaho"</span>
                 <span>"Maintained by Vibodh Ayyapureddi"</span>
             </div>
         </footer>
