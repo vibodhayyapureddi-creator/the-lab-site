@@ -35,7 +35,7 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Build
-        run: trunk build --release --public-url /the-lab-site/
+        run: trunk build --release --public-url /
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4

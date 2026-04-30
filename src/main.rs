@@ -379,8 +379,8 @@ fn App() -> impl IntoView {
         <nav class="nav">
             <div class="container nav-inner">
                 <a class="brand" href="#home">
-                    <img class="mark" src="logo.svg" alt="The Lab logo" />
-                    <span>"The Lab"</span>
+                    <img class="mark" src="logo.svg" alt="The Lab Boise logo" />
+                    <span>"The Lab Boise"</span>
                 </a>
                 <div class="nav-links">
                     <a href="#home">"Home"</a>
@@ -397,9 +397,9 @@ fn App() -> impl IntoView {
                 <div class="container hero-layout">
                     <div>
                         <div class="eyebrow">"Engineering Organization"</div>
-                        <h1>"The Lab"</h1>
+                        <h1>"The Lab Boise"</h1>
                         <p class="lead">
-                            "The Lab is an engineering organization focused on building real projects and solving technical problems."
+                            "The Lab Boise is an engineering organization focused on building real projects and solving technical problems."
                         </p>
                         <div class="hero-rail">
                             <span><strong>"Main Project:"</strong> " Electric Car 2026"</span>
@@ -408,7 +408,7 @@ fn App() -> impl IntoView {
                     </div>
                     <div class="panel">
                         <div class="panel-title">"Electric Car 2026"</div>
-                        <p>"The main project focus for The Lab."</p>
+                        <p>"The main project focus for The Lab Boise."</p>
                         <span class="status">"In progress"</span>
                     </div>
                 </div>
@@ -419,7 +419,7 @@ fn App() -> impl IntoView {
                     <div class="info-block">
                         <h2>"About"</h2>
                         <p>
-                            "Based in Boise, Idaho, The Lab brings engineering work into one organized place. The focus is practical design, prototyping, testing, and turning ideas into working systems."
+                            "The Lab Boise brings engineering work into one organized place. The focus is practical design, prototyping, testing, and turning ideas into working systems."
                         </p>
                     </div>
                     <div class="info-block">
@@ -439,7 +439,7 @@ fn App() -> impl IntoView {
                     <div class="section-heading">
                         <h2>"Members"</h2>
                         <p>
-                            "The Lab is open to new members. Anyone interested in engineering, building, design, or technical projects is welcome."
+                            "The Lab Boise is open to new members. Anyone interested in engineering, building, design, or technical projects is welcome."
                         </p>
                     </div>
                     <div class="member-grid">
@@ -461,7 +461,7 @@ fn App() -> impl IntoView {
                     <div class="member-note">
                         <p>
                             <strong>"Current members:"</strong>
-                            " The Lab includes people across different stages of life and experience, from high school and college students to working professionals."
+                            " The Lab Boise includes people across different stages of life and experience, from high school and college students to working professionals."
                         </p>
                     </div>
                 </div>
@@ -472,7 +472,7 @@ fn App() -> impl IntoView {
                     <div class="project">
                         <div class="project-meta">"Upcoming Project"</div>
                         <h2>"Electric Car 2026"</h2>
-                        <p>"The Lab is currently centered on Electric Car 2026. Planning is underway, and progress will be added here as the project develops."</p>
+                        <p>"The Lab Boise is currently centered on Electric Car 2026. Planning is underway, and progress will be added here as the project develops."</p>
                     </div>
                     <div class="project-facts">
                         <div class="project-fact">
@@ -496,7 +496,7 @@ fn App() -> impl IntoView {
                     <div class="support-box">
                         <h2>"Sponsors and Donations"</h2>
                         <p>
-                            "The Lab is open to sponsors, donations, materials, tools, advice, and other support for engineering projects."
+                            "The Lab Boise is open to sponsors, donations, materials, tools, advice, and other support for engineering projects."
                         </p>
                         <p>
                             <a class="contact-link" href="mailto:vibodhayyapureddi@gmail.com">
@@ -524,7 +524,7 @@ fn App() -> impl IntoView {
 
         <footer>
             <div class="container">
-                <span>"The Lab · Engineering organization"</span>
+                <span>"The Lab Boise · Engineering organization"</span>
                 <span>"Based in Boise, Idaho"</span>
                 <span>"Maintained by Vibodh Ayyapureddi"</span>
             </div>
