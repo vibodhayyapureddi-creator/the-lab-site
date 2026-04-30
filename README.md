@@ -7,3 +7,5 @@ The Lab Boise is a student-led engineering organization in Boise, Idaho focused 
 This website is maintained by Vibodh Ayyapureddi, Founder and Lead of The Lab Boise.
 
 All changes should be approved by Vibodh Ayyapureddi before they are published. 
+
+https://thelabboise.org/
