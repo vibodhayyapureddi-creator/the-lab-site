@@ -185,6 +185,34 @@ fn App() -> impl IntoView {
                 color: #f8ecef;
             }
 
+            .hero-actions {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 12px;
+                margin-top: 24px;
+            }
+
+            .hero-contact {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                min-height: 44px;
+                padding: 10px 16px;
+                border: 1px solid rgba(255,255,255,0.72);
+                background: #fbfef9;
+                color: var(--accent-dark);
+                font-size: 0.95rem;
+                font-weight: 800;
+                text-decoration: none;
+                transition: background 140ms ease, color 140ms ease, transform 140ms ease;
+            }
+
+            .hero-contact:hover {
+                background: #ffffff;
+                color: var(--accent);
+                transform: translateY(-1px);
+            }
+
             .hero-rail {
                 color: #f4e4e7;
                 display: grid;
@@ -399,8 +427,11 @@ fn App() -> impl IntoView {
                         <div class="eyebrow">"Engineering Organization"</div>
                         <h1>"The Lab Boise"</h1>
                         <p class="lead">
-                            "The Lab Boise is an engineering organization focused on building real projects and solving technical problems."
+                            "The Lab Boise is a student-led engineering organization in Boise, Idaho focused on building real projects, prototyping, and solving technical problems."
                         </p>
+                        <div class="hero-actions">
+                            <a class="hero-contact" href="mailto:vibodhayyapureddi@gmail.com">"Email The Lab Boise"</a>
+                        </div>
                         <div class="hero-rail">
                             <span><strong>"Main Project:"</strong> " Electric Car 2026"</span>
                             <span><strong>"Location:"</strong> " Boise, Idaho"</span>
@@ -419,7 +450,7 @@ fn App() -> impl IntoView {
                     <div class="info-block">
                         <h2>"About"</h2>
                         <p>
-                            "The Lab Boise brings engineering work into one organized place. The focus is practical design, prototyping, testing, and turning ideas into working systems."
+                            "The Lab Boise brings student engineering work into one organized place. The focus is practical design, prototyping, testing, and turning ideas into working systems."
                         </p>
                     </div>
                     <div class="info-block">

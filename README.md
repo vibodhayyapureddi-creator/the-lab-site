@@ -1,6 +1,6 @@
 # The Lab Boise
 
-The Lab Boise is an engineering organization focused on hands-on projects.
+The Lab Boise is a student-led engineering organization in Boise, Idaho focused on hands-on projects.
 
 ## Ownership
 
