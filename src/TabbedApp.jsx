@@ -233,11 +233,9 @@ function ElectricCarPage() {
 
 function MediaItem({ item, title }) {
   const label = `${title} â€” ${item.fileName}`;
-  const temporaryNumber = String(item.order).padStart(2, "0");
 
   return (
     <figure className="media-card">
-      <span className="media-number">#{temporaryNumber}</span>
       {item.type === "video" ? (
         <video
           controls
@@ -256,7 +254,6 @@ function MediaItem({ item, title }) {
       )}
       <figcaption>
         <span>
-          <strong>#{temporaryNumber}</strong>{" "}
           {item.fileName.replace(/\.[^.]+$/, "")}
         </span>
         <span>{item.type === "video" ? "Video" : "Photo"}</span>
@@ -288,10 +285,6 @@ function MilestonePage({ phase }) {
           <a className="back-link" href="#/electric-car">
             â† All electric car milestones
           </a>
-          <div className="temporary-label-note">
-            Temporary labels are shown as <strong>#01, #02, and so on</strong>.
-            Use these numbers to tell us which photos or videos to remove.
-          </div>
           <div className="media-grid milestone-media">
             {media.map((item) => (
               <MediaItem item={item} title={chapter.title} key={item.fileName} />
