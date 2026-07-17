@@ -113,7 +113,7 @@ function HomePage() {
               <p>Students and local builders working together in Boise.</p>
             </div>
             <a className="section-link" href="#/members">
-              Open members page’
+              Open members page
             </a>
           </div>
           <MembersList compact />
