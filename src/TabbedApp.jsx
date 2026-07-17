@@ -472,7 +472,7 @@ function TabbedApp() {
             <img className="mark" src="/logo.svg" alt="" />
             <span>The Lab Boise</span>
           </a>
-          <p>Student-led engineering Â· Boise, Idaho</p>
+          <p>Student-led engineering · Boise, Idaho</p>
           <p>Maintained by Vibodh Ayyapureddi</p>
         </div>
       </footer>
