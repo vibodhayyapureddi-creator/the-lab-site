@@ -283,7 +283,7 @@ function MilestonePage({ phase }) {
       <section className="section">
         <div className="shell">
           <a className="back-link" href="#/electric-car">
-            â† All electric car milestones
+            All electric car milestones
           </a>
           <div className="media-grid milestone-media">
             {media.map((item) => (
