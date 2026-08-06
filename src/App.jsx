@@ -5,8 +5,10 @@ import mediaManifest from "./media-manifest.json";
 const members = [
   { name: "Vibodh Ayyapureddi", role: "Founder and Lead" },
   { name: "Kallen Raeder" },
+  { name: "David Foster", role: "Mechanical Lead" },
   { name: "Blake Franks" },
-  { name: "David Foster" },
+  { name: "Aydin Ege" },
+  { name: "Chinmay Tiwari" },
   { name: "Isaac Levesque" },
   { name: "Jaden Das" },
   { name: "Parker Ingram" },
@@ -46,7 +48,6 @@ const chapters = [
       "The chassis, suspension, differential and space for new parts were measured.",
     files: [
       "IMG_1072.HEIC",
-      "IMG_1080.HEIC",
       "IMG_1081.HEIC",
       "IMG_1079.HEIC",
     ],

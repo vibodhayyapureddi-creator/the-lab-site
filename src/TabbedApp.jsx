@@ -8,8 +8,8 @@ const tabs = [
   { label: "Home", route: "/home" },
   { label: "Members", route: "/members" },
   { label: "Electric Car", route: "/electric-car" },
-  { label: "Boat 2027", route: "/boat-2027" },
   { label: "Workshops", route: "/workshops" },
+  { label: "Boat 2027", route: "/boat-2027" },
   { label: "Support", route: "/support" },
 ];
 
@@ -178,8 +178,24 @@ function MembersPage() {
 }
 
 function MilestoneCard({ chapter }) {
+  const chapterMedia = chapter.files
+    .map((fileName) => mediaByName.get(fileName))
+    .filter(Boolean);
+  const cover =
+    chapterMedia.find((item) => item.type !== "video") ||
+    chapterMedia.find((item) => item.poster);
+  const coverUrl = cover?.type === "video" ? cover.poster : cover?.url;
+
   return (
     <a className="milestone-card" href={`#/electric-car/${chapter.phase}`}>
+      {coverUrl && (
+        <img
+          className="milestone-cover"
+          src={coverUrl}
+          alt=""
+          loading="lazy"
+        />
+      )}
       <div>
         <span>{chapter.date}</span>
         <h3>{chapter.title}</h3>
@@ -194,7 +210,7 @@ function ElectricCarPage() {
   return (
     <>
       <ProjectHeader
-        eyebrow="Current project Â· 2026"
+        eyebrow="Current project · 2026"
         title="Electric Car"
         description="A 1998 donor car is being turned into an electric car, with photos and videos showing the work."
       />
@@ -214,12 +230,6 @@ function ElectricCarPage() {
               <span>location</span>
             </div>
           </div>
-          <div className="section-heading">
-            <div>
-              <div className="kicker kicker--dark">Chronological build log</div>
-              <h2>Choose a milestone</h2>
-            </div>
-          </div>
           <div className="milestone-list">
             {chapters.map((chapter) => (
               <MilestoneCard chapter={chapter} key={chapter.phase} />
@@ -232,7 +242,7 @@ function ElectricCarPage() {
 }
 
 function MediaItem({ item, title }) {
-  const label = `${title} â€” ${item.fileName}`;
+  const label = `${title} — ${item.fileName}`;
 
   return (
     <figure className="media-card">
@@ -252,12 +262,6 @@ function MediaItem({ item, title }) {
           <img src={item.url} alt={label} loading="eager" />
         </a>
       )}
-      <figcaption>
-        <span>
-          {item.fileName.replace(/\.[^.]+$/, "")}
-        </span>
-        <span>{item.type === "video" ? "Video" : "Photo"}</span>
-      </figcaption>
     </figure>
   );
 }
@@ -276,7 +280,7 @@ function MilestonePage({ phase }) {
   return (
     <>
       <ProjectHeader
-        eyebrow={`${chapter.date} Â· Milestone ${chapter.phase}`}
+        eyebrow={`${chapter.date} · Milestone ${chapter.phase}`}
         title={chapter.title}
         description={chapter.description}
       />
@@ -321,7 +325,7 @@ function BoatPage() {
   return (
     <>
       <ProjectHeader
-        eyebrow="Planned project Â· Summer 2027"
+        eyebrow="Planned project · Summer 2027"
         title="Summer Boat 2027"
         description="A boat project is planned for summer 2027."
       />
@@ -369,7 +373,7 @@ function SupportPage() {
   return (
     <>
       <ProjectHeader
-        eyebrow="Members Â· sponsors Â· mentors"
+        eyebrow="Members · sponsors · mentors"
         title="Support The Lab Boise"
         description="You can help with tools, materials, advice, donations or sponsorships."
       />

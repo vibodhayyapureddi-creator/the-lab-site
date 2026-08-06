@@ -473,9 +473,18 @@ ul {
 
 .milestone-card {
   display: block;
+  overflow: hidden;
   border: 1px solid var(--line);
   border-left: 4px solid var(--accent);
   background: var(--paper);
+}
+
+.milestone-cover {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-bottom: 1px solid var(--line);
+  background: #242224;
+  object-fit: cover;
 }
 
 .milestone-card > div:last-child {
@@ -654,25 +663,6 @@ ul {
   background: #ffffff;
 }
 
-.media-number {
-  position: absolute;
-  z-index: 2;
-  top: 10px;
-  left: 10px;
-  display: inline-flex;
-  min-width: 42px;
-  min-height: 32px;
-  align-items: center;
-  justify-content: center;
-  padding: 5px 8px;
-  border: 2px solid #ffffff;
-  background: var(--accent);
-  color: #ffffff;
-  font-size: 0.78rem;
-  font-weight: 800;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.28);
-}
-
 .media-card a,
 .media-card video {
   width: 100%;
@@ -686,25 +676,6 @@ ul {
   height: 100%;
   background: #242224;
   object-fit: contain;
-}
-
-.media-card figcaption {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  padding: 8px 10px;
-  color: var(--muted);
-  font-size: 0.68rem;
-  text-transform: uppercase;
-}
-
-.media-card figcaption span:last-child {
-  color: var(--accent);
-  font-weight: 700;
-}
-
-.media-card figcaption strong {
-  color: var(--accent-dark);
 }
 
 .future {
