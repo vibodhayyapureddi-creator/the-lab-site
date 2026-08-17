@@ -140,9 +140,11 @@ function HomePage() {
               <p>A boat project planned for summer 2027. More details later.</p>
             </a>
             <a className="home-page-card" href="#/workshops">
-              <span>Coming soon</span>
-              <h3>Workshops</h3>
-              <p>Hands-on workshops are coming soon.</p>
+              <span>Saturday, August 29</span>
+              <h3>EV Engineering Workshop</h3>
+              <p>
+                11:30 AM–12:30 PM at Bown Crossing Library in Boise.
+              </p>
             </a>
           </div>
         </div>
@@ -349,20 +351,58 @@ function WorkshopsPage() {
   return (
     <>
       <ProjectHeader
-        eyebrow="Coming soon"
-        title="Workshops"
-        description="Hands-on workshops are coming soon."
+        eyebrow="Upcoming workshop · August 29, 2026"
+        title="Electric Vehicle Engineering Workshop"
+        description="A free, one-hour workshop for students in grades 1 through 12."
       />
       <section className="section">
-        <div className="shell">
-          <div className="future-detail">
-            <span className="status">Coming soon</span>
-            <h2>Topics and dates will appear here</h2>
+        <div className="shell workshop-layout">
+          <div className="workshop-details">
+            <span className="status">Upcoming</span>
+            <h2>Saturday, August 29, 2026</h2>
             <p>
-              Topics, dates, locations and sign-up information will be posted
-              here.
+              A real student-built electric car will be used as a hands-on
+              engineering example. No prior engineering experience is needed.
             </p>
+            <dl className="event-details">
+              <div>
+                <dt>Time</dt>
+                <dd>11:30 AM–12:30 PM</dd>
+              </div>
+              <div>
+                <dt>Location</dt>
+                <dd>Bown Crossing Library, Boise</dd>
+              </div>
+              <div>
+                <dt>For</dt>
+                <dd>Students in grades 1–12</dd>
+              </div>
+              <div>
+                <dt>Cost</dt>
+                <dd>Free</dd>
+              </div>
+            </dl>
+            <a
+              className="button button--dark"
+              href="/ev-workshop-flyer.pdf"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Open workshop flyer
+            </a>
           </div>
+          <a
+            className="flyer-card"
+            href="/ev-workshop-flyer.pdf"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Open the electric vehicle engineering workshop flyer"
+          >
+            <img
+              src="/workshop-flyer.webp"
+              alt="Free Electric Vehicle Engineering Workshops flyer"
+            />
+          </a>
         </div>
       </section>
     </>

@@ -132,7 +132,7 @@ const chapters = [
       "IMG_2358.JPG",
       "IMG_2359.MOV",
       "IMG_2364 - Trim.mp4",
-      "IMG_2367.JPG",
+      "IMG_1150.HEIC",
     ],
   },
   {

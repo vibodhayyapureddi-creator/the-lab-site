@@ -578,6 +578,74 @@ ul {
   margin-top: 24px;
 }
 
+.workshop-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(300px, 1.1fr);
+  gap: 28px;
+  align-items: start;
+}
+
+.workshop-details {
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+  background: var(--paper);
+}
+
+.workshop-details h2 {
+  margin-top: 24px;
+}
+
+.event-details {
+  display: grid;
+  gap: 0;
+  margin: 24px 0;
+}
+
+.event-details div {
+  display: grid;
+  grid-template-columns: 88px 1fr;
+  gap: 12px;
+  padding: 11px 0;
+  border-top: 1px solid var(--line);
+}
+
+.event-details div:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.event-details dt {
+  color: var(--accent-dark);
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.event-details dd {
+  margin: 0;
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.flyer-card {
+  display: block;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  box-shadow: 0 8px 24px rgba(24, 24, 24, 0.08);
+}
+
+.flyer-card:hover,
+.flyer-card:focus-visible {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.flyer-card img {
+  width: 100%;
+  height: auto;
+}
+
 .contact-box a {
   color: var(--accent-dark);
   font-weight: 700;
@@ -856,7 +924,8 @@ footer {
   .member-list,
   .plain-member-list,
   .home-page-grid,
-  .milestone-list {
+  .milestone-list,
+  .workshop-layout {
     grid-template-columns: 1fr;
   }
 
