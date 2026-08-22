@@ -140,10 +140,11 @@ function HomePage() {
               <p>A boat project planned for summer 2027. More details later.</p>
             </a>
             <a className="home-page-card" href="#/workshops">
-              <span>Saturday, August 29</span>
-              <h3>EV Engineering Workshop</h3>
+              <span>Registration open · August 29</span>
+              <h3>Grades 7–9 EV Workshop</h3>
               <p>
-                11:30 AM–12:30 PM at Bown Crossing Library in Boise.
+                Sign up for the 11:30 AM workshop at Bown Crossing Library in
+                Boise.
               </p>
             </a>
           </div>
@@ -351,14 +352,14 @@ function WorkshopsPage() {
   return (
     <>
       <ProjectHeader
-        eyebrow="Upcoming workshop · August 29, 2026"
-        title="Electric Vehicle Engineering Workshop"
-        description="A free, one-hour workshop for students in grades 1 through 12."
+        eyebrow="Hands-on learning"
+        title="Workshops"
+        description="Multiple workshops are planned, with activities tailored to students’ grade levels."
       />
       <section className="section">
         <div className="shell workshop-layout">
           <div className="workshop-details">
-            <span className="status">Upcoming</span>
+            <span className="status">Registration open</span>
             <h2>Saturday, August 29, 2026</h2>
             <p>
               A real student-built electric car will be used as a hands-on
@@ -375,34 +376,52 @@ function WorkshopsPage() {
               </div>
               <div>
                 <dt>For</dt>
-                <dd>Students in grades 1–12</dd>
+                <dd>Students in grades 7–9</dd>
               </div>
               <div>
                 <dt>Cost</dt>
                 <dd>Free</dd>
               </div>
             </dl>
-            <a
-              className="button button--dark"
-              href="/ev-workshop-flyer.pdf"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Open workshop flyer
-            </a>
+            <p className="signup-note">
+              Sign up before attending using the online registration form or
+              the QR code on the flyer.
+            </p>
+            <div className="workshop-actions">
+              <a
+                className="button button--dark"
+                href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAAchOF_1UQzI2Qk9FT1I0RzFBN0lFQURKREVNR1hKUy4u&origin=QRCode"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Sign up online
+              </a>
+            </div>
+            <div className="registration-qr">
+              <img
+                src="/workshop-registration-qr.png"
+                alt="QR code for the workshop registration form"
+              />
+              <div>
+                <strong>Scan to sign up</strong>
+                <span>Opens the workshop registration form.</span>
+              </div>
+            </div>
           </div>
-          <a
-            className="flyer-card"
-            href="/ev-workshop-flyer.pdf"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="Open the electric vehicle engineering workshop flyer"
-          >
+          <div className="flyer-card">
             <img
               src="/workshop-flyer.webp"
               alt="Free Electric Vehicle Engineering Workshops flyer"
             />
-          </a>
+          </div>
+          <div className="more-workshops">
+            <div className="kicker kicker--dark">Future workshops</div>
+            <h2>More workshops are coming</h2>
+            <p>
+              Future workshops will be tailored to the students’ grade levels
+              so the topics and activities fit their experience.
+            </p>
+          </div>
         </div>
       </section>
     </>

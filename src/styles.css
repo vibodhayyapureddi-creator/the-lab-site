@@ -627,18 +627,68 @@ ul {
   font-weight: 600;
 }
 
+.signup-note {
+  padding: 14px 16px;
+  border-left: 4px solid var(--accent);
+  background: var(--accent-soft);
+  color: var(--ink);
+  font-weight: 650;
+}
+
+.workshop-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.registration-qr {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 20px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  background: var(--bg);
+}
+
+.registration-qr img {
+  width: 148px;
+  height: 148px;
+}
+
+.registration-qr strong,
+.registration-qr span {
+  display: block;
+}
+
+.registration-qr strong {
+  color: var(--accent-dark);
+}
+
+.registration-qr span {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.more-workshops {
+  grid-column: 1 / -1;
+  padding: 24px 28px;
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--accent);
+  background: var(--paper);
+}
+
+.more-workshops p {
+  max-width: 680px;
+  margin-bottom: 0;
+}
+
 .flyer-card {
   display: block;
   overflow: hidden;
   border: 1px solid var(--line);
   background: var(--paper);
   box-shadow: 0 8px 24px rgba(24, 24, 24, 0.08);
-}
-
-.flyer-card:hover,
-.flyer-card:focus-visible {
-  border-color: var(--accent);
-  transform: translateY(-1px);
 }
 
 .flyer-card img {
