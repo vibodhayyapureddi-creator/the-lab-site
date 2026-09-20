@@ -578,122 +578,254 @@ ul {
   margin-top: 24px;
 }
 
-.workshop-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(300px, 1.1fr);
-  gap: 28px;
-  align-items: start;
+.teaching-callout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 32px;
+  padding: 24px;
+  border: 1px solid #e0bac1;
+  border-left: 4px solid var(--accent);
+  background: var(--accent-soft);
 }
 
-.workshop-details {
-  padding: 28px;
+.teaching-callout h2 {
+  margin-bottom: 6px;
+}
+
+.teaching-callout p {
+  max-width: 620px;
+  margin-bottom: 0;
+}
+
+.teaching-callout .button {
+  flex: 0 0 auto;
+}
+
+.workshop-page {
+  padding-top: 38px;
+}
+
+.workshops-shell {
+  width: min(1160px, calc(100% - 32px));
+}
+
+.workshop-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.workshop-stat {
+  padding: 16px 18px;
   border: 1px solid var(--line);
-  border-left: 4px solid var(--accent);
+  border-top: 3px solid var(--accent);
   background: var(--paper);
 }
 
-.workshop-details h2 {
-  margin-top: 24px;
+.workshop-stat strong,
+.workshop-stat span {
+  display: block;
 }
 
-.event-details {
-  display: grid;
-  gap: 0;
-  margin: 24px 0;
-}
-
-.event-details div {
-  display: grid;
-  grid-template-columns: 88px 1fr;
-  gap: 12px;
-  padding: 11px 0;
-  border-top: 1px solid var(--line);
-}
-
-.event-details div:last-child {
-  border-bottom: 1px solid var(--line);
-}
-
-.event-details dt {
+.workshop-stat strong {
   color: var(--accent-dark);
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.workshop-stat span {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.workshop-section-heading {
+  margin-bottom: 16px;
+}
+
+.workshop-section-heading h2 {
+  margin-bottom: 0;
+}
+
+.workshop-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 16px;
+}
+
+.workshop-entry {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--accent);
+  background: var(--paper);
+  box-shadow: 0 4px 14px rgba(24, 24, 24, 0.05);
+}
+
+.workshop-entry--completed {
+  border-top-color: #347457;
+}
+
+.workshop-entry--upcoming {
+  background: #fffafb;
+}
+
+.workshop-entry--signup {
+  border-color: #dbb2ba;
+  border-top-color: var(--accent-dark);
+  background: var(--accent-soft);
+}
+
+.workshop-photo {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-bottom: 1px solid var(--line);
+  object-fit: cover;
+}
+
+.workshop-video {
+  width: calc(100% - 36px);
+  max-height: 150px;
+  margin: 0 18px 18px;
+  background: #242224;
+  object-fit: contain;
+}
+
+.workshop-entry-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.workshop-badges {
+  min-height: 27px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 13px;
+}
+
+.workshop-badge {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  padding: 4px 8px;
+  border: 1px solid transparent;
+  font-size: 0.75rem;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.workshop-badge--completed {
+  border-color: #a9d0bc;
+  background: #e5f2eb;
+  color: #24533e;
+}
+
+.workshop-badge--upcoming,
+.workshop-badge--interest {
+  border-color: #ddb3ba;
+  background: #ffffff;
+  color: var(--accent-dark);
+}
+
+.workshop-badge--limited {
+  border-color: var(--accent);
+  color: var(--accent-dark);
+}
+
+.workshop-date {
+  color: var(--accent-dark);
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.workshop-entry h3 {
+  margin: 8px 0;
+  font-size: 1.18rem;
+  line-height: 1.25;
+}
+
+.workshop-location {
+  margin-bottom: 14px;
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.workshop-meta {
+  display: grid;
+  gap: 6px;
+  margin: 0 0 14px;
+}
+
+.workshop-meta div {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 8px;
+}
+
+.workshop-meta dt {
+  color: var(--muted);
   font-size: 0.75rem;
   font-weight: 800;
   text-transform: uppercase;
 }
 
-.event-details dd {
+.workshop-meta dd {
   margin: 0;
   color: var(--ink);
-  font-weight: 600;
+  font-size: 0.86rem;
 }
 
-.signup-note {
-  padding: 14px 16px;
-  border-left: 4px solid var(--accent);
-  background: var(--accent-soft);
-  color: var(--ink);
-  font-weight: 650;
+.workshop-entry-body > p {
+  font-size: 0.88rem;
 }
 
-.workshop-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.registration-qr {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  margin-top: 20px;
-  padding: 16px;
-  border: 1px solid var(--line);
-  background: var(--bg);
-}
-
-.registration-qr img {
-  width: 148px;
-  height: 148px;
-}
-
-.registration-qr strong,
-.registration-qr span {
-  display: block;
-}
-
-.registration-qr strong {
+.workshop-note {
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
   color: var(--accent-dark);
+  font-weight: 700;
 }
 
-.registration-qr span {
+.workshop-signup-points {
+  margin: 0 0 18px;
+  padding-left: 18px;
+  font-size: 0.84rem;
+}
+
+.workshop-entry--signup .button {
+  align-self: flex-start;
+}
+
+.future-workshop-qr {
+  display: grid;
+  justify-items: start;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.future-workshop-qr img {
+  width: 164px;
+  height: 164px;
+  border: 8px solid #ffffff;
+}
+
+.future-workshop-qr span {
+  max-width: 220px;
   color: var(--muted);
-  font-size: 0.82rem;
-}
-
-.more-workshops {
-  grid-column: 1 / -1;
-  padding: 24px 28px;
-  border: 1px solid var(--line);
-  border-top: 4px solid var(--accent);
-  background: var(--paper);
-}
-
-.more-workshops p {
-  max-width: 680px;
-  margin-bottom: 0;
-}
-
-.flyer-card {
-  display: block;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  background: var(--paper);
-  box-shadow: 0 8px 24px rgba(24, 24, 24, 0.08);
-}
-
-.flyer-card img {
-  width: 100%;
-  height: auto;
+  font-size: 0.78rem;
+  font-weight: 700;
 }
 
 .contact-box a {
@@ -947,6 +1079,16 @@ footer {
   font-size: 0.8rem;
 }
 
+@media (max-width: 1000px) {
+  .workshop-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .workshop-entry--signup {
+    grid-column: 1 / -1;
+  }
+}
+
 @media (max-width: 760px) {
   .nav-inner {
     align-items: flex-start;
@@ -975,8 +1117,21 @@ footer {
   .plain-member-list,
   .home-page-grid,
   .milestone-list,
-  .workshop-layout {
+  .workshop-grid {
     grid-template-columns: 1fr;
+  }
+
+  .workshop-entry--signup {
+    grid-column: auto;
+  }
+
+  .teaching-callout {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .teaching-callout .button {
+    width: 100%;
   }
 
   .hero-layout {

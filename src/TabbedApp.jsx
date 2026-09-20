@@ -13,6 +13,67 @@ const tabs = [
   { label: "Support", route: "/support" },
 ];
 
+const futureWorkshopSignUpUrl =
+  "https://forms.cloud.microsoft/r/d5RZHGV8vb";
+
+const workshops = [
+  {
+    id: "sage-international-2026-09-14",
+    date: "September 14, 2026",
+    dateTime: "2026-09-14",
+    location: "Sage International School",
+    title: "Electric Vehicle Engineering Workshop",
+    audience: "Grades 9–10 STEM Club",
+    studentCount: 10,
+    status: "completed",
+    description:
+      "Students explored the electric vehicle conversion process, including motors, batteries, controllers, drivetrain systems, and the engineering design and testing process.",
+    photo: {
+      src: "/workshop-sage-september-14.webp",
+      alt: "Students attending an electric vehicle engineering workshop at Sage International School",
+    },
+    video: null,
+    optionalNote: "Invited back for a follow-up circuits workshop",
+    registrationLink: null,
+  },
+  {
+    id: "cole-ustick-2026-09-27",
+    date: "September 27, 2026",
+    dateTime: "2026-09-27",
+    location: "Cole & Ustick Library",
+    locationArea: "Boise",
+    title: "Electric Vehicle Engineering Workshop",
+    audience: "Grades 7–9",
+    studentCount: null,
+    status: "upcoming",
+    description: null,
+    photo: null,
+    video: null,
+    optionalNote: null,
+    registrationLink: null,
+  },
+];
+
+const workshopStats = [
+  {
+    value: workshops.filter((workshop) => workshop.status === "completed")
+      .length,
+    label: "Workshop Completed",
+  },
+  {
+    value: workshops.reduce(
+      (total, workshop) => total + (workshop.studentCount || 0),
+      0,
+    ),
+    label: "Students Reached",
+  },
+  {
+    value: workshops.filter((workshop) => workshop.status === "upcoming")
+      .length,
+    label: "Upcoming Workshop",
+  },
+];
+
 function getRoute() {
   const hash = window.location.hash;
   if (!hash || hash === "#top") return "/home";
@@ -140,11 +201,11 @@ function HomePage() {
               <p>A boat project planned for summer 2027. More details later.</p>
             </a>
             <a className="home-page-card" href="#/workshops">
-              <span>Registration open · August 29</span>
-              <h3>Grades 7–9 EV Workshop</h3>
+              <span>Upcoming · September 27</span>
+              <h3>EV Engineering Workshop</h3>
               <p>
-                Sign up for the 11:30 AM workshop at Bown Crossing Library in
-                Boise.
+                Grades 7–9 at Cole &amp; Ustick Library in Boise. Limited
+                seating.
               </p>
             </a>
           </div>
@@ -238,6 +299,18 @@ function ElectricCarPage() {
               <MilestoneCard chapter={chapter} key={chapter.phase} />
             ))}
           </div>
+          <aside className="teaching-callout">
+            <div>
+              <h2>EV Engineering Workshops</h2>
+              <p>
+                After completing the EV project, The Lab Boise began using it
+                to introduce other students to engineering.
+              </p>
+            </div>
+            <a className="button button--dark" href="#/workshops">
+              Explore EV Engineering Workshops →
+            </a>
+          </aside>
         </div>
       </section>
     </>
@@ -348,79 +421,158 @@ function BoatPage() {
   );
 }
 
+function WorkshopCard({ workshop }) {
+  const isCompleted = workshop.status === "completed";
+
+  return (
+    <article className={`workshop-entry workshop-entry--${workshop.status}`}>
+      {workshop.photo && (
+        <img
+          className="workshop-photo"
+          src={workshop.photo.src}
+          alt={workshop.photo.alt}
+          loading="lazy"
+        />
+      )}
+      {workshop.video && (
+        <video
+          className="workshop-video"
+          controls
+          playsInline
+          preload="metadata"
+          aria-label={`${workshop.title} video`}
+        >
+          <source src={workshop.video.src} type={workshop.video.type} />
+          Your browser does not support embedded video.
+        </video>
+      )}
+      <div className="workshop-entry-body">
+        <div className="workshop-badges">
+          {isCompleted ? (
+            <span className="workshop-badge workshop-badge--completed">
+              ✓ Completed
+            </span>
+          ) : (
+            <>
+              <span className="workshop-badge workshop-badge--upcoming">
+                Upcoming
+              </span>
+              <span className="workshop-badge workshop-badge--limited">
+                Limited Seating
+              </span>
+            </>
+          )}
+        </div>
+        <time className="workshop-date" dateTime={workshop.dateTime}>
+          {workshop.date}
+        </time>
+        <h3>{workshop.title}</h3>
+        <p className="workshop-location">
+          {workshop.location}
+          {workshop.locationArea ? ` · ${workshop.locationArea}` : ""}
+        </p>
+        <dl className="workshop-meta">
+          <div>
+            <dt>Audience</dt>
+            <dd>{workshop.audience}</dd>
+          </div>
+          {workshop.studentCount !== null && (
+            <div>
+              <dt>Students</dt>
+              <dd>{workshop.studentCount}</dd>
+            </div>
+          )}
+        </dl>
+        {workshop.description && <p>{workshop.description}</p>}
+        {workshop.optionalNote && (
+          <p className="workshop-note">{workshop.optionalNote}</p>
+        )}
+        {workshop.registrationLink && (
+          <a
+            className="button button--dark"
+            href={workshop.registrationLink}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Register
+          </a>
+        )}
+      </div>
+    </article>
+  );
+}
+
+function FutureWorkshopCard() {
+  return (
+    <article className="workshop-entry workshop-entry--signup">
+      <div className="workshop-entry-body">
+        <span className="workshop-badge workshop-badge--interest">
+          Advance Signup
+        </span>
+        <h3>Sign Up for a Future Workshop</h3>
+        <p>
+          Interested in attending an Electric Vehicle Engineering Workshop?
+          Sign up now, even if there is not currently a workshop date that
+          works for you.
+        </p>
+        <p>
+          Additional workshops are planned through the end of 2026 and will be
+          scheduled as enough students express interest. When a new workshop is
+          scheduled, students who have signed up will be contacted by email
+          with the opportunity to attend and confirm a spot.
+        </p>
+        <ul className="workshop-signup-points">
+          <li>Individual students may sign up.</li>
+          <li>Signing up adds you to the future workshop contact list.</li>
+          <li>A seat is confirmed only after you respond to an event email.</li>
+        </ul>
+        <a
+          className="button button--dark"
+          href={futureWorkshopSignUpUrl}
+          target="_blank"
+          rel="noreferrer"
+        >
+          Sign Up to Be Invited
+        </a>
+        <div className="future-workshop-qr">
+          <img
+            src="/future-workshops-qr.png"
+            alt="QR code for future electric vehicle workshop invitations"
+          />
+          <span>Scan to sign up for future workshop invitations</span>
+        </div>
+      </div>
+    </article>
+  );
+}
+
 function WorkshopsPage() {
   return (
     <>
       <ProjectHeader
         eyebrow="Hands-on learning"
-        title="Workshops"
-        description="Multiple workshops are planned, with activities tailored to students’ grade levels."
+        title="Electric Vehicle Engineering Workshops"
+        description="Free, hands-on engineering workshops for students using The Lab Boise’s 2026 electric vehicle project as a real-world example."
       />
-      <section className="section">
-        <div className="shell workshop-layout">
-          <div className="workshop-details">
-            <span className="status">Registration open</span>
-            <h2>Saturday, August 29, 2026</h2>
-            <p>
-              A real student-built electric car will be used as a hands-on
-              engineering example. No prior engineering experience is needed.
-            </p>
-            <dl className="event-details">
-              <div>
-                <dt>Time</dt>
-                <dd>11:30 AM–12:30 PM</dd>
+      <section className="section workshop-page">
+        <div className="shell workshops-shell">
+          <div className="workshop-stats" aria-label="Workshop impact">
+            {workshopStats.map((stat) => (
+              <div className="workshop-stat" key={stat.label}>
+                <strong>{stat.value}</strong>
+                <span>{stat.label}</span>
               </div>
-              <div>
-                <dt>Location</dt>
-                <dd>Bown Crossing Library, Boise</dd>
-              </div>
-              <div>
-                <dt>For</dt>
-                <dd>Students in grades 7–9</dd>
-              </div>
-              <div>
-                <dt>Cost</dt>
-                <dd>Free</dd>
-              </div>
-            </dl>
-            <p className="signup-note">
-              Sign up before attending using the online registration form or
-              the QR code on the flyer.
-            </p>
-            <div className="workshop-actions">
-              <a
-                className="button button--dark"
-                href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAAchOF_1UQzI2Qk9FT1I0RzFBN0lFQURKREVNR1hKUy4u&origin=QRCode"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Sign up online
-              </a>
-            </div>
-            <div className="registration-qr">
-              <img
-                src="/workshop-registration-qr.png"
-                alt="QR code for the workshop registration form"
-              />
-              <div>
-                <strong>Scan to sign up</strong>
-                <span>Opens the workshop registration form.</span>
-              </div>
-            </div>
+            ))}
           </div>
-          <div className="flyer-card">
-            <img
-              src="/workshop-flyer.webp"
-              alt="Free Electric Vehicle Engineering Workshops flyer"
-            />
+          <div className="workshop-section-heading">
+            <div className="kicker kicker--dark">2026 workshop series</div>
+            <h2>Workshops</h2>
           </div>
-          <div className="more-workshops">
-            <div className="kicker kicker--dark">Future workshops</div>
-            <h2>More workshops are coming</h2>
-            <p>
-              Future workshops will be tailored to the students’ grade levels
-              so the topics and activities fit their experience.
-            </p>
+          <div className="workshop-grid">
+            {workshops.map((workshop) => (
+              <WorkshopCard workshop={workshop} key={workshop.id} />
+            ))}
+            <FutureWorkshopCard />
           </div>
         </div>
       </section>
