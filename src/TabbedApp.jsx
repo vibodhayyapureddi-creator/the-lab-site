@@ -44,12 +44,67 @@ const workshops = [
     locationArea: "Boise",
     title: "Electric Vehicle Engineering Workshop",
     audience: "Grades 7–9",
-    studentCount: null,
-    status: "upcoming",
-    description: null,
-    photo: null,
+    studentCount: 7,
+    status: "completed",
+    description:
+      "Students learned about the main electric vehicle parts, how the systems work together, and how to get started with an EV project.",
+    photo: {
+      src: "/workshop-cole-ustick-september-27.webp",
+      alt: "Students attending an electric vehicle engineering workshop at Cole and Ustick Library",
+    },
     video: null,
     optionalNote: null,
+    registrationLink: null,
+  },
+  {
+    id: "downtown-boise-ymca-2026-10-05",
+    date: "October 5, 2026",
+    dateTime: "2026-10-05",
+    location: "Downtown Boise YMCA",
+    locationArea: "Boise",
+    title: "Electricity and Electric Vehicles",
+    audience: "Grades 1–6",
+    studentCount: null,
+    status: "upcoming",
+    description:
+      "Students will learn how batteries, circuits, motors, and electrical connections work together to power an electric vehicle.",
+    photo: null,
+    video: null,
+    optionalNote: "Presented in partnership with the Downtown Boise YMCA.",
+    registrationLink: null,
+  },
+  {
+    id: "downtown-boise-ymca-2026-10-12",
+    date: "October 12, 2026",
+    dateTime: "2026-10-12",
+    location: "Downtown Boise YMCA",
+    locationArea: "Boise",
+    title: "Motors and Vehicle Performance",
+    audience: "Grades 1–6",
+    studentCount: null,
+    status: "upcoming",
+    description:
+      "Students will learn how electric motors create movement and how wheel size, gearing, speed, and torque affect a vehicle’s performance.",
+    photo: null,
+    video: null,
+    optionalNote: "Presented in partnership with the Downtown Boise YMCA.",
+    registrationLink: null,
+  },
+  {
+    id: "downtown-boise-ymca-2026-10-19",
+    date: "October 19, 2026",
+    dateTime: "2026-10-19",
+    location: "Downtown Boise YMCA",
+    locationArea: "Boise",
+    title: "From Sketch to Finished Part",
+    audience: "Grades 1–6",
+    studentCount: null,
+    status: "upcoming",
+    description:
+      "Students will learn how engineers take an idea from a sketch to a finished part.",
+    photo: null,
+    video: null,
+    optionalNote: "Presented in partnership with the Downtown Boise YMCA.",
     registrationLink: null,
   },
 ];
@@ -58,7 +113,7 @@ const workshopStats = [
   {
     value: workshops.filter((workshop) => workshop.status === "completed")
       .length,
-    label: "Workshop Completed",
+    label: "Workshops Completed",
   },
   {
     value: workshops.reduce(
@@ -70,7 +125,7 @@ const workshopStats = [
   {
     value: workshops.filter((workshop) => workshop.status === "upcoming")
       .length,
-    label: "Upcoming Workshop",
+    label: "Upcoming Workshops",
   },
 ];
 
@@ -201,11 +256,11 @@ function HomePage() {
               <p>A boat project planned for summer 2027. More details later.</p>
             </a>
             <a className="home-page-card" href="#/workshops">
-              <span>Upcoming · September 27</span>
-              <h3>EV Engineering Workshop</h3>
+              <span>2026 workshop series</span>
+              <h3>EV Engineering Workshops</h3>
               <p>
-                Grades 7–9 at Cole &amp; Ustick Library in Boise. Limited
-                seating.
+                Three workshops are coming to the Downtown Boise YMCA in
+                October for students in grades 1–6.
               </p>
             </a>
           </div>
