@@ -481,14 +481,6 @@ function WorkshopCard({ workshop }) {
 
   return (
     <article className={`workshop-entry workshop-entry--${workshop.status}`}>
-      {workshop.photo && (
-        <img
-          className="workshop-photo"
-          src={workshop.photo.src}
-          alt={workshop.photo.alt}
-          loading="lazy"
-        />
-      )}
       {workshop.video && (
         <video
           className="workshop-video"
@@ -518,6 +510,15 @@ function WorkshopCard({ workshop }) {
             </>
           )}
         </div>
+        {workshop.photo && (
+          <img
+            className="workshop-photo"
+            src={workshop.photo.src}
+            alt={workshop.photo.alt}
+            loading="lazy"
+            draggable="false"
+          />
+        )}
         <time className="workshop-date" dateTime={workshop.dateTime}>
           {workshop.date}
         </time>

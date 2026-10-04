@@ -685,10 +685,15 @@ ul {
 }
 
 .workshop-photo {
-  width: 100%;
-  aspect-ratio: 16 / 10;
-  border-bottom: 1px solid var(--line);
+  width: 160px;
+  max-width: 50%;
+  aspect-ratio: 4 / 3;
+  margin: 0 0 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
   object-fit: cover;
+  pointer-events: none;
+  user-select: none;
 }
 
 .workshop-video {
